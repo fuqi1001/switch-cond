@@ -5,7 +5,6 @@ inputs:
   refs: "refs/head/main"
     required: true
     description: 'input git branch here'
-    default: 'refs/head/main'
 outputs:
   tag:
       description: 'tag name'
