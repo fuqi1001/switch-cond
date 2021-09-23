@@ -41,8 +41,10 @@ function run() {
         try {
             const gitRef = core.getInput('refs');
             const arr = gitRef.split('/');
-            const branchName = arr[arr.length - 1];
-            core.setOutput('tag', branchName);
+            const refBranchName = arr[arr.length - 1];
+            const headRef = core.getInput('head_ref');
+            const tag = headRef ? headRef : refBranchName;
+            core.setOutput('tag', tag);
         }
         catch (error) {
             core.setFailed(error.message);
