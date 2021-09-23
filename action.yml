@@ -5,6 +5,9 @@ inputs:
   refs:
     required: true
     description: 'input git branch here'
+  base_ref:
+    required: true
+    description: 'input git branch here'
 outputs:
   tag:
     description: 'tag name'
