@@ -6,7 +6,6 @@ inputs:
     required: true
     description: 'input git branch here'
   head_ref:
-    required: true
     description: 'input git branch here'
 outputs:
   tag:
