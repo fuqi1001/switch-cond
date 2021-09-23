@@ -1,11 +1,11 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'tag name'
+description: 'tag name by git branch'
+author: 'qi'
 inputs:
-  milliseconds: # change this
+  refs: "refs/head/main"
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'input git branch here'
+    default: 'refs/head/main'
 runs:
   using: 'node12'
   main: 'dist/index.js'
