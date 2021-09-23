@@ -42,7 +42,7 @@ function run() {
             const gitRef = core.getInput('refs');
             const arr = gitRef.split('/');
             const refBranchName = arr[arr.length - 1];
-            const baseRef = core.getInput('head_ref');
+            const baseRef = core.getInput('base_ref');
             const tag = baseRef ? baseRef : refBranchName;
             core.setOutput('tag', tag);
         }

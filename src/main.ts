@@ -6,7 +6,7 @@ async function run(): Promise<void> {
     const arr: string[] = gitRef.split('/')
     const refBranchName: string = arr[arr.length - 1]
 
-    const baseRef: string = core.getInput('head_ref')
+    const baseRef: string = core.getInput('base_ref')
     const tag = baseRef ? baseRef : refBranchName
 
     core.setOutput('tag', tag)
