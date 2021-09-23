@@ -2,7 +2,7 @@ name: 'tag name'
 description: 'tag name by git branch'
 author: 'qi'
 inputs:
-  refs: "refs/head/main"
+  refs:
     required: true
     description: 'input git branch here'
 outputs:
