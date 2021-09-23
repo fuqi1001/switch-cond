@@ -6,6 +6,9 @@ inputs:
     required: true
     description: 'input git branch here'
     default: 'refs/head/main'
+outputs:
+  tag:
+      description: 'tag name'
 runs:
   using: 'node12'
   main: 'dist/index.js'
