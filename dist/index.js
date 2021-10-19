@@ -44,7 +44,11 @@ function run() {
             const refBranchName = arr[arr.length - 1];
             const baseRef = core.getInput('base_ref');
             const tag = baseRef ? baseRef : refBranchName;
+            const isMainVar = core.getInput('isMain');
+            const isMain = isMainVar === 'true';
+            const commonBranch = isMain ? 'master' : tag;
             core.setOutput('tag', tag);
+            core.setOutput('commonBranch', commonBranch);
         }
         catch (error) {
             core.setFailed(error.message);

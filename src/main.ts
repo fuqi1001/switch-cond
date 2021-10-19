@@ -9,7 +9,12 @@ async function run(): Promise<void> {
     const baseRef: string = core.getInput('base_ref')
     const tag = baseRef ? baseRef : refBranchName
 
+    const isMainVar: string = core.getInput('isMain')
+    const isMain: boolean = isMainVar === 'true'
+    const commonBranch: string = isMain ? 'master' : tag
+
     core.setOutput('tag', tag)
+    core.setOutput('commonBranch', commonBranch)
   } catch (error) {
     core.setFailed(error.message)
   }
