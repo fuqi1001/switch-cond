@@ -19,6 +19,7 @@ async function run(): Promise<void> {
     let commonBranch = 'master'
     if (!useMainCommon) commonBranch = tag
 
+    core.setOutput('useMainCommon', useMainCommon)
     core.setOutput('tag', tag)
     core.setOutput('commonBranch', commonBranch)
   } catch (error) {
