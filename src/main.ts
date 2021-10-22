@@ -14,10 +14,10 @@ async function run(): Promise<void> {
     const baseRef: string = core.getInput('base_ref')
     const tag = baseRef ? baseRef : refBranchName
 
-    const isMainVar: string = core.getInput('isMain')
-    const isMain: boolean = isMainVar === 'true'
     const useMainCommon: boolean = mainSet.has(tag)
-    const commonBranch: string = isMain || useMainCommon ? 'master' : tag
+
+    let commonBranch = 'master'
+    if (!useMainCommon) commonBranch = tag
 
     core.setOutput('tag', tag)
     core.setOutput('commonBranch', commonBranch)
