@@ -11,7 +11,8 @@ async function run(): Promise<void> {
 
     const isMainVar: string = core.getInput('isMain')
     const isMain: boolean = isMainVar === 'true'
-    const commonBranch: string = isMain ? 'master' : tag
+    const useMainCommon: boolean = tag === 'main' || tag === 'master'
+    const commonBranch: string = isMain || useMainCommon ? 'master' : tag
 
     core.setOutput('tag', tag)
     core.setOutput('commonBranch', commonBranch)
